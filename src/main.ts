@@ -1,3 +1,3 @@
-export default function main() {
-	console.log('Hello, world!');
-}
+import DraftDisplay from './DraftDisplay';
+
+export default DraftDisplay;
