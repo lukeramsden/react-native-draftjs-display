@@ -11,51 +11,33 @@
     "react-native": ">=0.60.0"
   },
   "dependencies": {
+    "@types/draft-js": "^0.10.40",
+    "@types/ramda": "^0.27.6",
+    "@types/react": "^16.8.6",
+    "@types/react-native": "^0.60.0",
     "fp-ts": "^2.6.2",
-    "lodash": "^4.17.15"
+    "ramda": "^0.27.0"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^1.1.0",
-    "@types/react": "^16.8.6",
-    "@types/draft-js": "^0.10.40",
-    "@types/lodash": "^4.14.153",
-    "@types/react-native": "^0.60.0",
+    "@types/jest": "^25.2.3",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
     "eslint": "^7.1.0",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-native": "^0.60.0",
     "react-test-renderer": "^16.8.6",
+    "ts-jest": "^26.0.0",
     "ts-node": "^8.10.1",
     "tslib": "^2.0.0",
     "typescript": "^3.9.3"
   },
   "scripts": {
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "tsc -p .",
-    "test": "echo NO TEST SPECIFIED",
-    "pretest": "npm run build"
-  },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "/sample/node_modules/"
-    ],
-    "clearMocks": true,
-    "coverageDirectory": "./coverage/",
-    "coverageReporters": [
-      "lcov",
-      "text"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/sample/",
-      "/coverage/"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}"
-    ]
+    "test": "jest --collectCoverage"
   }
 }

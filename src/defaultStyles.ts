@@ -67,19 +67,22 @@ export const defaultBlockStyles = StyleSheet.create({
 });
 
 export const defaultInlineStyles = StyleSheet.create({
-  bold: {
+  BOLD: {
     fontWeight: 'bold',
   },
-  italic: {
+  ITALIC: {
     fontStyle: 'italic',
   },
-  link: {
+  LINK: {
     textDecorationLine: 'underline',
   },
-  underline: {
+  UNDERLINE: {
     textDecorationLine: 'underline',
   },
-  strikethrough: {
+  STRIKETHROUGH: {
     textDecorationLine: 'line-through',
+  },
+  CODE: {
+    fontFamily: Platform.OS === 'android' ? 'monospace' : 'Courier New',
   },
 });
