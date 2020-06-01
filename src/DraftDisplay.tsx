@@ -1,10 +1,18 @@
 import React, {createContext} from 'react';
 import {View} from 'react-native';
-import type {RawDraftContentState} from 'draft-js';
+import type {
+  RawDraftContentState,
+  DraftBlockType,
+  RawDraftContentBlock,
+} from 'draft-js';
 import DraftText from './DraftText';
 
 export interface Props {
   contentState: RawDraftContentState;
+  blockHandlers?: Record<
+    DraftBlockType,
+    (props: {block: RawDraftContentBlock}) => React.ReactElement
+  >;
 }
 
 export const DraftDisplayContext = createContext<{
@@ -16,10 +24,14 @@ export const DraftDisplayContext = createContext<{
  * Takes contentState and renders it according to configuration
  * contentState is provided to sub-components via React context
  */
-const DraftDisplay: React.FC<Props> = ({contentState}) => {
+const DraftDisplay: React.FC<Props> = ({contentState, blockHandlers}) => {
   return (
     <DraftDisplayContext.Provider value={{getContentState: () => contentState}}>
       {contentState.blocks.map((block) => {
+        const BlockHandler = blockHandlers?.[block.type];
+        if (BlockHandler) {
+          return <BlockHandler block={block} />;
+        }
         switch (block.type) {
           case 'value':
           case 'unstyled':

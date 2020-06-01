@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders empty blocks 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      undefined,
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders styled text, overlapping 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Array [
+          Object {
+            "fontWeight": "bold",
+          },
+        ],
+      ]
+    }
+  >
+    Hell
+  </Text>
+  <Text
+    style={
+      Array [
+        Array [
+          Object {
+            "fontWeight": "bold",
+          },
+          Object {
+            "fontStyle": "italic",
+          },
+        ],
+      ]
+    }
+  >
+    o
+  </Text>
+  <Text
+    style={
+      Array [
+        Array [
+          Object {
+            "fontStyle": "italic",
+          },
+        ],
+      ]
+    }
+  >
+     Wo
+  </Text>
+  <Text>
+    rld
+  </Text>
+</Text>
+`;
+
+exports[`renders styled text, single block 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Array [
+          Object {
+            "fontWeight": "bold",
+          },
+        ],
+      ]
+    }
+  >
+    Hello
+  </Text>
+  <Text>
+     World
+  </Text>
+</Text>
+`;
+
+exports[`renders text of unknown type omitting default styles 1`] = `
+<Text
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
+  Hello World
+</Text>
+`;
+
+exports[`renders text-align: center 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      Object {
+        "textAlign": "center",
+      },
+    ]
+  }
+>
+  Hello World
+</Text>
+`;
+
+exports[`renders text-align: left 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      Object {
+        "textAlign": "left",
+      },
+    ]
+  }
+>
+  Hello World
+</Text>
+`;
+
+exports[`renders text-align: right 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      Object {
+        "textAlign": "right",
+      },
+    ]
+  }
+>
+  Hello World
+</Text>
+`;
+
+exports[`renders unstyled text 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "marginBottom": 2,
+      },
+      undefined,
+    ]
+  }
+>
+  Hello World
+</Text>
+`;

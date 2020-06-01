@@ -1,13 +1,14 @@
 import {StyleSheet, Platform} from 'react-native';
 
 export const defaultBlockStyles = StyleSheet.create({
-  paragraph: {
-    fontSize: 14,
-    fontWeight: 'normal',
-  },
   unstyled: {
     fontSize: 14,
     fontWeight: 'normal',
+  },
+  paragraph: {
+    fontSize: 14,
+    fontWeight: 'normal',
+    marginBottom: 2,
   },
   'header-one': {
     fontSize: 32,
