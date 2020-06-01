@@ -30,7 +30,11 @@ const DraftDisplay: React.FC<Props> = ({contentState, blockHandlers}) => {
       {contentState.blocks.map((block) => {
         const BlockHandler = blockHandlers?.[block.type];
         if (BlockHandler) {
-          return <BlockHandler block={block} />;
+          return (
+            <View key={block.key}>
+              <BlockHandler block={block} />
+            </View>
+          );
         }
         switch (block.type) {
           case 'value':
