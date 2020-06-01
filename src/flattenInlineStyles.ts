@@ -36,6 +36,10 @@ export const flattenInlineStyles = (
     // add style property to segments
     (segments) =>
       segments.map((segment) => {
+        if (isNaN(segment.length)) {
+          return [];
+        }
+
         const styles = flatten(
           inlineStyleRanges.map(({offset, length, style}) => {
             const segmentLength = segment.offset + segment.length;
@@ -44,15 +48,12 @@ export const flattenInlineStyles = (
               : [];
           }),
         );
-
-        return styles.length
-          ? [
-              {
-                ...segment,
-                style: styles,
-              },
-            ]
-          : [];
+        return [
+          {
+            ...segment,
+            style: styles,
+          },
+        ];
       }),
     flatten,
   )(inlineStyleRanges);
