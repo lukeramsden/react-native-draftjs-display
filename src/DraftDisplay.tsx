@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React, {createContext, useContext} from 'react';
 import {View} from 'react-native';
 import type {
   RawDraftContentState,
@@ -16,15 +16,25 @@ export interface Props {
 }
 
 export const DraftDisplayContext = createContext<{
-  getContentState?: () => RawDraftContentState;
-}>({});
+  getContentState: () => RawDraftContentState;
+}>({
+  getContentState: () => ({blocks: [], entityMap: {}}),
+});
+
+export const useDraftContentState = () => {
+  const ctx = useContext(DraftDisplayContext);
+  return ctx.getContentState();
+};
 
 /**
  * Top-level element
  * Takes contentState and renders it according to configuration
  * contentState is provided to sub-components via React context
  */
-const DraftDisplay: React.FC<Props> = ({contentState, blockHandlers}) => {
+export const DraftDisplay: React.FC<Props> = ({
+  contentState,
+  blockHandlers,
+}) => {
   return (
     <DraftDisplayContext.Provider value={{getContentState: () => contentState}}>
       {contentState.blocks.map((block) => {
