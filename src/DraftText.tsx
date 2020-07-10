@@ -5,11 +5,11 @@ import {DraftDisplayContext} from './DraftDisplay';
 import {defaultBlockStyles, defaultInlineStyles} from './defaultStyles';
 import {flattenInlineStyles} from './flattenInlineStyles';
 
-export interface Props {
+export interface DraftTextProps {
   block: RawDraftContentBlock;
 }
 
-const DraftText: React.FC<Props> = ({
+export const DraftText: React.FC<DraftTextProps> = ({
   block: {key, type, text, inlineStyleRanges, data},
 }) => {
   // const context = useContext(DraftDisplayContext);

@@ -4,3 +4,4 @@ export {
   RawDraftContentBlock as DraftContentBlock,
 } from 'draft-js';
 export * from './DraftDisplay';
+export * from './DraftText';
