@@ -12,6 +12,9 @@ It's quite barebones as I'm only adding functionality I need. Feel free to use t
 
 ```tsx
 // Directly from my own codebase
+const TextBlockHandler = ({block}: {block: DraftContentBlock}) => (
+  <DraftText block={block} TextComponent={Text} />
+);
 <>
   {data.getPost?.content && (
     <DraftDisplay
