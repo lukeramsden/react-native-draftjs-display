@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders core block and inline styles correctly 1`] = `
+Array [
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 32,
+            "fontWeight": "bold",
+            "marginBottom": 8,
+            "marginTop": 10,
+          },
+          Object {
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Centered header
+    </Text>
+  </View>,
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 24,
+            "fontWeight": "bold",
+            "marginBottom": 7,
+            "marginTop": 9,
+          },
+          Object {
+            "textAlign": "right",
+          },
+        ]
+      }
+    >
+      Right header
+    </Text>
+  </View>,
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 19,
+            "fontWeight": "bold",
+            "marginBottom": 6,
+            "marginTop": 8,
+          },
+          Object {
+            "textAlign": "justify",
+          },
+        ]
+      }
+    >
+      Justified header
+    </Text>
+  </View>,
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 19,
+            "fontWeight": "bold",
+            "marginBottom": 6,
+            "marginTop": 8,
+          },
+          Object {
+            "textAlign": "left",
+          },
+        ]
+      }
+    >
+      Left header
+    </Text>
+  </View>,
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 19,
+            "fontWeight": "bold",
+            "marginBottom": 6,
+            "marginTop": 8,
+          },
+          undefined,
+        ]
+      }
+    >
+      
+    </Text>
+  </View>,
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontSize": 14,
+            "fontWeight": "normal",
+          },
+          undefined,
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontWeight": "bold",
+              },
+            ],
+          ]
+        }
+      >
+        Bold
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [],
+          ]
+        }
+      >
+         
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontStyle": "italic",
+              },
+            ],
+          ]
+        }
+      >
+        italic
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [],
+          ]
+        }
+      >
+         
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "textDecorationLine": "line-through",
+              },
+            ],
+          ]
+        }
+      >
+        strikethrough
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [],
+          ]
+        }
+      >
+         
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "textDecorationLine": "underline",
+              },
+            ],
+          ]
+        }
+      >
+        underline
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [],
+          ]
+        }
+      >
+         
+      </Text>
+      <Text
+        style={
+          Array [
+            Array [
+              Object {
+                "fontWeight": "bold",
+              },
+              Object {
+                "fontStyle": "italic",
+              },
+              Object {
+                "textDecorationLine": "line-through",
+              },
+              Object {
+                "textDecorationLine": "underline",
+              },
+            ],
+          ]
+        }
+      >
+        all
+      </Text>
+    </Text>
+  </View>,
+]
+`;
