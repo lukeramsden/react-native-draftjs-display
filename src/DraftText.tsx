@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Text, TextStyle} from 'react-native';
+import {Text, TextStyle, TextProps} from 'react-native';
 import type {RawDraftContentBlock} from 'draft-js';
 import {DraftDisplayContext} from './DraftDisplay';
 import {defaultBlockStyles, defaultInlineStyles} from './defaultStyles';
@@ -7,10 +7,14 @@ import {flattenInlineStyles} from './flattenInlineStyles';
 
 export interface DraftTextProps {
   block: RawDraftContentBlock;
+  TextComponent?: React.ComponentType<TextProps>;
 }
+
+const DefaultTextComponent = Text;
 
 export const DraftText: React.FC<DraftTextProps> = ({
   block: {key, type, text, inlineStyleRanges, data},
+  TextComponent = DefaultTextComponent,
 }) => {
   // const context = useContext(DraftDisplayContext);
 
@@ -31,7 +35,7 @@ export const DraftText: React.FC<DraftTextProps> = ({
     inner = flatInlineStyles.map((inlineStyle, idx) => {
       lastCharacterRendered = inlineStyle.offset + inlineStyle.length;
       return (
-        <Text
+        <TextComponent
           key={`${key}:${idx}`}
           style={[inlineStyle.style.map((s) => defaultInlineStyles[s])]}
           children={text.substr(inlineStyle.offset, inlineStyle.length)}
@@ -41,7 +45,7 @@ export const DraftText: React.FC<DraftTextProps> = ({
 
     if (text.length !== lastCharacterRendered) {
       (inner as JSX.Element[]).push(
-        <Text
+        <TextComponent
           key={`${key}:last`}
           children={text.substring(lastCharacterRendered)}
         />,
@@ -52,9 +56,10 @@ export const DraftText: React.FC<DraftTextProps> = ({
   }
 
   return (
-    <Text style={[blockStyle, textAlignStyle.textAlign && textAlignStyle]}>
+    <TextComponent
+      style={[blockStyle, textAlignStyle.textAlign && textAlignStyle]}>
       {inner}
-    </Text>
+    </TextComponent>
   );
 };
 
