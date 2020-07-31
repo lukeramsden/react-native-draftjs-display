@@ -17,13 +17,23 @@ export interface Props {
       nextBlock?: RawDraftContentBlock;
     }) => React.ReactElement
   >;
+  customBlockStyles?: {[key: string]: any};
+  customInlineStyles?: {[key: string]: any};
 }
 
 export const DraftDisplayContext = createContext<{
-  getContentState: () => RawDraftContentState;
+  getContentState: () => Props['contentState'];
+  getCustomBlockStyles: () => Props['customBlockStyles'];
+  getCustomInlineStyles: () => Props['customInlineStyles'];
 }>({
   getContentState: () => ({blocks: [], entityMap: {}}),
+  getCustomBlockStyles: () => ({}),
+  getCustomInlineStyles: () => ({}),
 });
+
+export const useDraftDisplayContext = () => {
+  return useContext(DraftDisplayContext);
+};
 
 export const useDraftContentState = () => {
   const ctx = useContext(DraftDisplayContext);
@@ -38,9 +48,16 @@ export const useDraftContentState = () => {
 export const DraftDisplay: React.FC<Props> = ({
   contentState,
   blockHandlers,
+  customBlockStyles,
+  customInlineStyles,
 }) => {
   return (
-    <DraftDisplayContext.Provider value={{getContentState: () => contentState}}>
+    <DraftDisplayContext.Provider
+      value={{
+        getContentState: () => contentState,
+        getCustomBlockStyles: () => customBlockStyles,
+        getCustomInlineStyles: () => customInlineStyles,
+      }}>
       {contentState.blocks.map((block, idx, arr) => {
         const BlockHandler = blockHandlers?.[block.type];
         if (BlockHandler) {

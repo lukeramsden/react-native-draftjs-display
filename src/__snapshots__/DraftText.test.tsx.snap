@@ -4,11 +4,7 @@ exports[`renders empty blocks 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       undefined,
     ]
   }
@@ -21,11 +17,7 @@ exports[`renders styled text, overlapping 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       undefined,
     ]
   }
@@ -82,11 +74,7 @@ exports[`renders styled text, single block 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       undefined,
     ]
   }
@@ -127,11 +115,7 @@ exports[`renders text-align: center 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       Object {
         "textAlign": "center",
       },
@@ -146,11 +130,7 @@ exports[`renders text-align: left 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       Object {
         "textAlign": "left",
       },
@@ -165,11 +145,7 @@ exports[`renders text-align: right 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       Object {
         "textAlign": "right",
       },
@@ -184,11 +160,7 @@ exports[`renders unstyled text 1`] = `
 <Text
   style={
     Array [
-      Object {
-        "fontSize": 14,
-        "fontWeight": "normal",
-        "marginBottom": 2,
-      },
+      Object {},
       undefined,
     ]
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, TextStyle, TextProps} from 'react-native';
 import type {RawDraftContentBlock} from 'draft-js';
-// import {DraftDisplayContext} from './DraftDisplay';
+import {useDraftDisplayContext} from './DraftDisplay';
 import {defaultBlockStyles, defaultInlineStyles} from './defaultStyles';
 import {flattenInlineStyles} from './flattenInlineStyles';
 
@@ -16,10 +16,12 @@ export const DraftText: React.FC<DraftTextProps> = ({
   block: {key, type, text, inlineStyleRanges, data},
   TextComponent = DefaultTextComponent,
 }) => {
-  // const context = useContext(DraftDisplayContext);
+  const context = useDraftDisplayContext();
 
   const blockStyle =
-    defaultBlockStyles[type as keyof typeof defaultBlockStyles] || {};
+    context.getCustomBlockStyles()?.[type as keyof typeof defaultBlockStyles] ||
+    defaultBlockStyles[type as keyof typeof defaultBlockStyles] ||
+    {};
 
   let inner: React.ReactNode;
 
@@ -42,7 +44,12 @@ export const DraftText: React.FC<DraftTextProps> = ({
       return (
         <TextComponent
           key={`${key}:${idx}`}
-          style={[inlineStyle.style.map((s) => defaultInlineStyles[s])]}
+          style={[
+            inlineStyle.style.map(
+              (s) =>
+                context.getCustomBlockStyles()?.[s] || defaultInlineStyles[s],
+            ),
+          ]}
           children={text.substr(inlineStyle.offset, inlineStyle.length)}
         />
       );

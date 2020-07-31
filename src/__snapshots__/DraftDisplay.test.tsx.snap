@@ -5,11 +5,7 @@ exports[`doesn't cut off text before first style or after last style 1`] = `
   <Text
     style={
       Array [
-        Object {
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "marginBottom": 2,
-        },
+        Object {},
         undefined,
       ]
     }
@@ -65,12 +61,7 @@ Array [
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 32,
-            "fontWeight": "bold",
-            "marginBottom": 8,
-            "marginTop": 10,
-          },
+          Object {},
           Object {
             "textAlign": "center",
           },
@@ -84,12 +75,7 @@ Array [
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 24,
-            "fontWeight": "bold",
-            "marginBottom": 7,
-            "marginTop": 9,
-          },
+          Object {},
           Object {
             "textAlign": "right",
           },
@@ -103,12 +89,7 @@ Array [
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 19,
-            "fontWeight": "bold",
-            "marginBottom": 6,
-            "marginTop": 8,
-          },
+          Object {},
           Object {
             "textAlign": "justify",
           },
@@ -122,12 +103,7 @@ Array [
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 19,
-            "fontWeight": "bold",
-            "marginBottom": 6,
-            "marginTop": 8,
-          },
+          Object {},
           Object {
             "textAlign": "left",
           },
@@ -141,12 +117,7 @@ Array [
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 19,
-            "fontWeight": "bold",
-            "marginBottom": 6,
-            "marginTop": 8,
-          },
+          Object {},
           undefined,
         ]
       }
@@ -158,10 +129,7 @@ Array [
     <Text
       style={
         Array [
-          Object {
-            "fontSize": 14,
-            "fontWeight": "normal",
-          },
+          Object {},
           undefined,
         ]
       }
