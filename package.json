@@ -1,6 +1,6 @@
 {
   "name": "react-native-draftjs-display",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "files": [
