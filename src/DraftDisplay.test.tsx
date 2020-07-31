@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import DraftDisplay from './DraftDisplay';
 import {RawDraftContentState} from 'draft-js';
 
-it('renders core block and inline styles correctly', () => {
+it('renders header blocks and inline styles correctly', () => {
   const contentState: RawDraftContentState = {
     blocks: [
       {
@@ -112,6 +112,32 @@ it('renders core block and inline styles correctly', () => {
             length: 3,
             offset: 36,
           },
+        ],
+      },
+    ],
+    entityMap: {},
+  };
+
+  const tree = renderer
+    .create(<DraftDisplay contentState={contentState} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it("doesn't cut off text before first style or after last style", () => {
+  const contentState: RawDraftContentState = {
+    blocks: [
+      {
+        key: '4cfq6',
+        data: {},
+        text:
+          '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."',
+        type: 'paragraph',
+        depth: 1,
+        entityRanges: [],
+        inlineStyleRanges: [
+          {style: 'UNDERLINE', length: 4, offset: 23},
+          {style: 'ITALIC', length: 12, offset: 163},
         ],
       },
     ],

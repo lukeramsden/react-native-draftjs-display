@@ -1,7 +1,7 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Text, TextStyle, TextProps} from 'react-native';
 import type {RawDraftContentBlock} from 'draft-js';
-import {DraftDisplayContext} from './DraftDisplay';
+// import {DraftDisplayContext} from './DraftDisplay';
 import {defaultBlockStyles, defaultInlineStyles} from './defaultStyles';
 import {flattenInlineStyles} from './flattenInlineStyles';
 
@@ -29,10 +29,15 @@ export const DraftText: React.FC<DraftTextProps> = ({
   };
 
   if (flatInlineStyles.length > 0) {
+    // used to render any unstyled text before the start of the flattened styles
+    let firstCharacterRendered: number = 0;
     // used to render any unstyled text after the end of the string
     let lastCharacterRendered: number = 0;
 
     inner = flatInlineStyles.map((inlineStyle, idx) => {
+      if (idx === 0) {
+        firstCharacterRendered = inlineStyle.offset;
+      }
       lastCharacterRendered = inlineStyle.offset + inlineStyle.length;
       return (
         <TextComponent
@@ -43,6 +48,17 @@ export const DraftText: React.FC<DraftTextProps> = ({
       );
     });
 
+    // add missing characters from the start
+    if (firstCharacterRendered !== 0) {
+      (inner as JSX.Element[]).unshift(
+        <TextComponent
+          key={`${key}:first`}
+          children={text.substring(0, firstCharacterRendered)}
+        />,
+      );
+    }
+
+    // add rest of unstyled string
     if (text.length !== lastCharacterRendered) {
       (inner as JSX.Element[]).push(
         <TextComponent

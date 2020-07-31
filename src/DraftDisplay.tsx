@@ -11,7 +11,11 @@ export interface Props {
   contentState: RawDraftContentState;
   blockHandlers?: Record<
     DraftBlockType,
-    (props: {block: RawDraftContentBlock, prevBlock?: RawDraftContentBlock, nextBlock?: RawDraftContentBlock}) => React.ReactElement
+    (props: {
+      block: RawDraftContentBlock;
+      prevBlock?: RawDraftContentBlock;
+      nextBlock?: RawDraftContentBlock;
+    }) => React.ReactElement
   >;
 }
 
@@ -42,7 +46,11 @@ export const DraftDisplay: React.FC<Props> = ({
         if (BlockHandler) {
           return (
             <View key={block.key}>
-              <BlockHandler block={block} prevBlock={arr[idx-1]} nextBlock={arr[idx+1]} />
+              <BlockHandler
+                block={block}
+                prevBlock={arr[idx - 1]}
+                nextBlock={arr[idx + 1]}
+              />
             </View>
           );
         }

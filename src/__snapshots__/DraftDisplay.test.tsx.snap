@@ -1,6 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders core block and inline styles correctly 1`] = `
+exports[`doesn't cut off text before first style or after last style 1`] = `
+<View>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "marginBottom": 2,
+        },
+        undefined,
+      ]
+    }
+  >
+    <Text>
+      "Lorem ipsum dolor sit 
+    </Text>
+    <Text
+      style={
+        Array [
+          Array [
+            Object {
+              "textDecorationLine": "underline",
+            },
+          ],
+        ]
+      }
+    >
+      amet
+    </Text>
+    <Text
+      style={
+        Array [
+          Array [],
+        ]
+      }
+    >
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    </Text>
+    <Text
+      style={
+        Array [
+          Array [
+            Object {
+              "fontStyle": "italic",
+            },
+          ],
+        ]
+      }
+    >
+      exercitation
+    </Text>
+    <Text>
+       ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </Text>
+  </Text>
+</View>
+`;
+
+exports[`renders header blocks and inline styles correctly 1`] = `
 Array [
   <View>
     <Text
