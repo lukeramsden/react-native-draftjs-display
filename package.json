@@ -1,6 +1,9 @@
 {
   "name": "react-native-draftjs-display",
   "version": "2.0.0",
+  "repository": {
+    "url": "https://github.com/lukeramsden/react-native-draftjs-display"
+  },
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "files": [
